@@ -7,7 +7,11 @@ In questo capitolo vengono presentate le tecnologie utilizzate e le motivazioni 
 \section{Django}
 Il framework utilizzato è Django, esso è stato scelto per la sua semplicità di utilizzo e per la sua flessibilità. Django è un framework open-source di alto-livello per lo sviluppo di applicazioni web scritto in Python. Esso è basato sul pattern architetturale Model-View-Template (MVT) e permette di sviluppare applicazioni web in modo rapido e pulito, fornendo un'interfaccia di amministrazione per la gestione dei dat, così da non dover implementare un admin zone mediante un altro linguaggio, ma mantenendo unificata la codebase. 
 
-Un altro vantaggio risiede nella scalabilità del framework, il quale permette la creazione di moduli che possono essere inseriti o rimossi con l'aggiunta di poche righe di codice all'interno di un file apposito. 
+Un altro vantaggio risiede nella scalabilità del framework, il quale permette la creazione di moduli che possono essere inseriti o rimossi con l'aggiunta di poche righe di codice all'interno di un file apposito.
+
+
+Data la natura del progetto, è stato necessario avere un framework che permettesse la creazione, validazione e modifica dei form, difatti Django offre un componente apposito per la gestione dinamica dei form dalle View, senza dover passare per il codice html evitando dunque inconsistenza in tutta la codebase. Per la visualizzazione dei form dinamicamente e con dello stile unificato viene utilizzato il modulo Crispy Forms per permettere di controllare come il form venga renderizzato dall'utente finale. \cite{crispy_forms}
+
 
 \subsection{Architettura MVT}
 Il vantaggio dell'utilizzo di un framework basato su architettura MVT permette ad ogni livello, ossia Model, View e Template, di lavorare indipendentemente, il che permette una maggiore indipendenza tra le parti. Esso è conveniente nel caso si decida di scalare l'applicativo web, in quanto permette di aggiungere nuove funzionalità senza dover modificare il codice già esistente. Inoltre, un'architettura MVT permette di rendere più veloce e più seplice la trasmissione di dati via internet.
@@ -22,6 +26,30 @@ Vengono presentati in dettaglio le componenti dell'architettura MVT:
 \end{itemize}
 
 
+Di seguito viene rappresentato un diagramma esplicativo dell'architettura di Django. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{images/architettura_django.png}
+    \caption{Architettura del framework Django}
+    \label{img:architettura_django}
+
+\end{figure}
+
+Il processo di una richiesta e risposta HTTP utilizzando il framework Django è il seguente:
+\begin{enumerate}
+    \item L'utente effettua una richiesta HTTP dal browser fornendo un URL(Uniform Resource Locator). 
+    \item Django valuta l'URL e controlla che esista una View corrispondente a tale URL. 
+    \item Entrando nel Model View Template la View cattura la richiesta, elabora i dati ed invia una risposta. Possono accadere le seguenti azioni :
+    \begin{enumerate}
+        \item La View richiede l'accesso a dei dati al componente Model : la query espressa sottoforma di linguaggio python viene valutata e trascritta nel linguaggio del database (nel contesto di questo specifico applicativo in SQL) e fornisce il QuerySet(l'insieme dei dati richiesti) alla View.
+        \item Con i dati ottenuti la view effettua delle modifiche a questi dati ed invia una copia al componente Model. 
+        \item Se richiesto, utilizzando i dati ottenuti, la view formula una richiesta di visualizzazione di una pagina HTML al componente Template e passa come argomenti gli eventuali dati aggiuntivi ottenuti. Una volta ricevuta la richiesta tale modulo genera i dati HTML necessari e li restituisce alla View
+    \end{enumerate}
+    \item Dopo aver fornito una risposta a Django, il componente View si incarica dell'inviare la risposta HTTP della richiesta effettuata mediante URL. 
+\end{enumerate}
+
+Ovviamente nel caso l'operazione del CRUD pattern sia una Create o una Delete e non una Read o Update, la richiesta di accesso ai dati del Database da parte del componente View sarà gestita in maniera appropriata(fornire l'accesso al dato e salvare l'entry nel database nel caso di una Create, o fornire la possibilità di eliminare una specifica entry nel database nel caso di una Delete).
 \subsection{Sicurezza}
 
 Un altro vantaggio del framework Django è la sicurezza, in quanto nativamente supporta dei controlli che possono essere facilmente inclusi sfruttando il livello d'astrazione fornito da un framework. \cite{django_security}
@@ -38,5 +66,14 @@ Quando l'utente visualizza questa pagina o questo messaggio, il codice maligno p
 
 \end{itemize}
 
+\section{Bootstrap}
+Per poter implementare blocchi di stile in modo efficiente e per rendere l'applicazione responsive viene utilizzato Bootstrap, un framework open-source di sviluppo Front-end e viene considerato il framework CSS più utilizzato per creare applicativi web e Mobile-first.
+
+Tale framework è estremamente personalizzabile, è compatibile con tutti i browser moderni e permette di evitare inconsistenze nel caso vengano utilizzati browser differenti.
+Precisamente viene utilizzato Bootstrap v5.0 \cite{bootstrap}
+
+\section{Shibboleth}
+
+\section{Mail}
 
 \clearpage
