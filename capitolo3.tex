@@ -4,6 +4,7 @@ In questo capitolo viene introdotta una definzione formalizzata di Challenge, su
 
 \section{Challenge}
 Viene definita \textbf{Challenge} una sfida proposta dall'azienda esterna all'università ed è composta da:
+
 \begin{itemize}
     \item Nome della Challenge.
     \item Laboratorio nel quale si svolgerà.
@@ -18,7 +19,7 @@ Viene definita \textbf{Challenge} una sfida proposta dall'azienda esterna all'un
     \item Numero massimo di gruppi.
 \end{itemize}
 
-Ogni azienda può formare più di una Challenge.
+Ogni azienda può formare più di una Challenge. Vi possono essere molteplici Challenge all'interno di un laboratorio.
 
 Alla conclusione del limite temporale previsto l'azienda che ha creato la Challenge \textbf{deve} selezionare i gruppi che parteciperanno entro un quantitativo di giorni. Gli utenti facenti parte dei gruppi selezionati riceveranno una mail contenente i dati della Challenge con eventuali dettagli aggiuntivi.
 
@@ -68,7 +69,7 @@ Alla formazione di un gruppo esso è in stato di \textbf{Pending}. Esso può cam
     \item Il Company Manager visualizza il dettaglio del gruppo e lo rifiuta. In tal caso lo stato del gruppo diviene \textbf{Rejected}. 
 \end{itemize}
 
-Per partecipare ad una Challenge è richiesto che il gruppo sia in \textbf{Accepted} state.
+Per partecipare ad una Challenge è richiesto che il gruppo sia in \textbf{Accepted} state. Il gruppo ha un tempo di vita limitato alla durata della Challenge, dunque tale entità viene creata per la Challenge.
 
 
 
@@ -121,7 +122,7 @@ Lo \textbf{Studente} è un \textbf{attore} e può svolgere le seguenti azioni: p
 
 Il \textbf{Tutor} è un \textbf{attore} e può svolgere le seguenti azioni: può visualizzare i gruppi che hanno richiesto la sua partecipazione, accettare o rifiutare di farne parte.
 
-Il \textbf{Sistema di invio mail/notifica} è l'infrastruttura che permette l'invio di email nei seguenti casi ed ai seguenti attori:
+Il \textbf{Sistema di invio mail/notifica} è un \textbf{subordinato} ed è l'infrastruttura che permette l'invio di email nei seguenti casi ed ai seguenti attori:
 \begin{itemize}
     \item Creazione di una nuova Challenge da parte del Company Manager : viene inviata una mail a tutti i moderatori del laboratorio nella quale la Challenge deve essere svolta. 
     \item Accettazione o rifiuto di una Challenge da parte del Moderatore: viene inviata una mail al Company Manager che ha creato la Challenge, oltre che ad una mail a tutti gli studenti che hanno richiesto di essere aggiornati sulle nuove Challenge e i quali interessi siano un super-set della Challenge accettata.
@@ -130,14 +131,14 @@ Il \textbf{Sistema di invio mail/notifica} è l'infrastruttura che permette l'in
     \item Accettazione o rifiuto di un gruppo da parte del Company Manager : viene inviata una mail a tutti i membri del gruppo.
 \end{itemize}
 
-\textbf{Shibboleth} è il modulo che permette di effettuare il login all'interno dell'applicativo. Esso è un software open source che permette l'autenticazione federata e single sign-on.
+\textbf{Shibboleth} è un \textbf{subordinato} ed è il modulo che permette di effettuare il login all'interno dell'applicativo. Esso è un software open source che permette l'autenticazione federata e single sign-on.
 
-Il \textbf{Database} è il corrispondente di ciò che è stato definito come componente Model all'interno dell'architettura di Django. Esso gestisce le transazioni con il Database ed è l'unico modulo in grado di accedere ai dati. Esso permette la traduzione di query da linguaggio python al linguaggio della base di dati selezionata. 
+Il \textbf{Database} è un \textbf{subordinato} ed è il corrispettivo di ciò che è stato definito come componente Model all'interno dell'architettura di Django. Esso gestisce le transazioni con il Database ed è l'unico modulo in grado di accedere ai dati. Esso permette la traduzione di query da linguaggio python al linguaggio della base di dati selezionata. 
 
 Di seguito viene riportato il diagramma di contesto dell'applicativo.
 
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.46]{images/diagrama_di_contesto.png}
     \label{fig:diagrama_di_contesto}
@@ -148,11 +149,25 @@ Di seguito viene riportato il diagramma di contesto dell'applicativo.
 
 Data la complessità del processo, viene di seguito utilizzato un diagramma Business Process Model Notation (BPMN) per descrivere il processo di creazione e partecipazione ad una Challenge. 
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
         \includegraphics[width=0.95\textwidth]{images/BPMN_Challenge.png}
     \caption{BPMN della creazione di una Challenge}
     \label{fig:BPMN_Challenge}
 \end{figure}
 
+
+Il flow dell'applicativo è il seguente:
+\begin{enumerate}
+    \item Il Company Manager crea una Challenge ed una mail viene inviata ai moderatori del laboratorio scelto come luogo per svolgere la Challenge.
+    \item Il Moderatore riceve la mail di richiesta di accettazione di una Challenge. Accede alla sua area personale, dove può visualizzare i suoi laboratori ed accede al dettaglio della Challenge. Alla conferma o rifiuto della Challenge viene inviata una email al Company Manager ed agli studenti che hanno sia scelto di essere aggiornati sulle nuove Challenge, sia che abbiano interessi che siano un super-set della Challenge accettata.
+    \item Gli studenti possono visualizzare la challenge approvata e formare dei gruppi o entrare a far parte di gruppi già creati mediante il codice fornito al capo gruppo. Alla creazione di un gruppo il tutor selezionato riceve una email.
+    \item Il tutor riceve la email e può accettare o rifiutare di entrare a far parte del gruppo. Alla sua decisione viene inviata una mail a tutti i membri del gruppo.
+    \item Il Company Manager può accedere al dettaglio della Challenge ed accettare o rifiutare di far partecipare i gruppi che sono già stati accettati da un tutor. Alla sua decisione viene inviata una mail a tutti i membri del gruppo.
+\end{enumerate}
+
+
+\section{Valutazione delle Challenge e dei gruppi}
+
+Al termine di una Challenge, agli attori 
 \clearpage
