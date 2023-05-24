@@ -44,7 +44,7 @@ Tale utente può effettuare le seguenti azioni:
             \item Lo studente può decidere di non ricevere email inerenti a nuove Challenge facente parte della sua area tematica.
         \end{itemize}
     \item Visualizzare la lista delle Challenges facenti parte dell'area di interesse selezionata.
-    \item Visualizzare informazioni inerenti alla Challenge selezionata.
+    \item Visualizzare informazioni inerenti alla Challenge selezionata, potendo visualizzare la \textit{Reputazione} della compagnia che ha proposto la Challenge (vedi sezione \ref{sec:valutazioni}).
     \item Iscriversi alla Challenge formando o entrando a far parte di un gruppo.
     \item Al termine di una Challenge lo studente può compilare un form per fornire un feedback all'azienda sulla Challenge appena compiuta. 
     \item Al termine di una Challenge lo studente può visualizzare il feedback ricevuto da parte del Company Manager.
@@ -168,6 +168,16 @@ Il flow dell'applicativo è il seguente:
 
 
 \section{Valutazione delle Challenge e dei gruppi}
+\label{sec:valutazioni}
 
-Al termine di una Challenge, agli attori 
+Al termine di una Challenge, il sistema rende disponibile la compilazione di feedback. Un feedback viene rappresentato da un form Django ed esso può essere compilato dai seguenti attori: Company Manager e Studente. 
+
+Il Company Manager può compilare il form dando una valutazione al gruppo ed ai singoli studenti, i quali vedranno all'interno della pagina di dettaglio del gruppo formato per la specifica Challenge la valutazione ricevuta.
+
+Lo studente, invece, può compilare il form dando una valutazione alla Challenge che ha effettuato. Il Company Manager vedrà all'interno della pagina di dettaglio della Challenge sia la valutazione media ricevuta, che la versione anonimizzata del feedback fornito da ogni studente. 
+
+Assieme al concetto di feedback dello studente, è utile introdurre il conceto di \textbf{Reputazione} della compagnia. Tale valore raccoglie la media di tutti i feedback effettuati da tutti gli studenti per ogni Challenge creata dall'azienda ed è utile per poter dare una valutazione oggettiva della compagnia per quanto concerne la creazione di Challenge all'interno del sistema.
+
+
+
 \clearpage
