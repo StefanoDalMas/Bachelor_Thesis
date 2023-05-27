@@ -1,6 +1,7 @@
 \chapter{Tecnologie utilizzate}
 \label{cha:tecnologie_utilizzate}
 
+La prima parte del tirocinio è stata investita per comprendere come implementare la mia idea all'interno di Industry, dunque è stato necessario comprendere le tecnologie utilizzate per lo sviluppo dell'applicativo web. 
 
 In questo capitolo vengono presentate le tecnologie utilizzate e le motivazioni dietro tali scelte. In particolare, vengono presentate le tecnologie utilizzate per la realizzazione del back-end, del front-end e del database.
 
@@ -26,9 +27,9 @@ Vengono presentati in dettaglio le componenti dell'architettura MVT:
 \end{itemize}
 
 
-Di seguito viene rappresentato un diagramma esplicativo dell'architettura di Django. 
+Di seguito viene rappresentato un diagramma esplicativo dell'architettura di Django.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{images/architettura_django.png}
     \caption{Architettura del framework Django}
@@ -38,6 +39,7 @@ Di seguito viene rappresentato un diagramma esplicativo dell'architettura di Dja
 
 Il processo di una richiesta e risposta HTTP utilizzando il framework Django è il seguente:
 \begin{enumerate}
+    \item L'utente interagisce mediante il proprio browser con il front-end dell'applicativo.
     \item L'utente effettua una richiesta HTTP dal browser fornendo un URL(Uniform Resource Locator). 
     \item Django valuta l'URL e controlla che esista una View corrispondente a tale URL. 
     \item Entrando nel Model View Template la View cattura la richiesta, elabora i dati ed invia una risposta. Possono accadere le seguenti azioni :
@@ -46,7 +48,8 @@ Il processo di una richiesta e risposta HTTP utilizzando il framework Django è 
         \item Con i dati ottenuti la view effettua delle modifiche a questi dati ed invia una copia al componente Model. 
         \item Se richiesto, utilizzando i dati ottenuti, la view formula una richiesta di visualizzazione di una pagina HTML al componente Template e passa come argomenti gli eventuali dati aggiuntivi ottenuti. Una volta ricevuta la richiesta tale modulo genera i dati HTML necessari e li restituisce alla View
     \end{enumerate}
-    \item Dopo aver fornito una risposta a Django, il componente View si incarica dell'inviare la risposta HTTP della richiesta effettuata mediante URL. 
+    \item Dopo aver fornito una risposta a Django, il componente View si incarica dell'inviare la risposta HTTP della richiesta effettuata mediante URL.
+    \item Il front-end cattura la risposta ed il browser predefinito dell'utente renderizza la risposta per permettere la visualizzazione.
 \end{enumerate}
 
 Ovviamente nel caso l'operazione del CRUD pattern sia una Create o una Delete e non una Read o Update, la richiesta di accesso ai dati del Database da parte del componente View sarà gestita in maniera appropriata(fornire l'accesso al dato e salvare l'entry nel database nel caso di una Create, o fornire la possibilità di eliminare una specifica entry nel database nel caso di una Delete).
@@ -66,17 +69,62 @@ Quando l'utente visualizza questa pagina o questo messaggio, il codice maligno p
 
 \end{itemize}
 
-\section{Bootstrap}
+\section{Front-end}
+In questa sezione vengono riportate le tecnologie utilizzate per permettere lo sviluppo dell'interfaccia front-end dell'applicativo. 
+\subsection{Bootstrap}
 Per poter implementare blocchi di stile in modo efficiente e per rendere l'applicazione responsive viene utilizzato Bootstrap, un framework open-source di sviluppo Front-end e viene considerato il framework CSS più utilizzato per creare applicativi web e Mobile-first.
 
 Tale framework è estremamente personalizzabile, è compatibile con tutti i browser moderni e permette di evitare inconsistenze nel caso vengano utilizzati browser differenti.
 Precisamente viene utilizzato Bootstrap v5.0 \cite{bootstrap}
 
-\section{SCSS}
+\subsection{SCSS}
 Per permettere la customizzazione di alcuni elementi di stile, viene utilizzato Sassy Cascading Style Sheets (SCSS), una delle estrensioni del classico CSS più stabili, mature e potenti che permette di utilizzare variabili, annidamento, mixin, import, ereditarietà e altro, rendendo più semplice la scrittura di codice CSS. \cite{scss}
 
-\section{Shibboleth}
+\section{Autenticazione ed Autorizzazione}
+Seguendo il principio \textit{Separation of concerns}, l'autenticazione e l'autorizzazione vengono gestite da due componenti differenti, in modo da permettere una maggiore manutenibilità e scalabilità del sistema.
+Per permettere agli utenti di accedere alle risorse controllando che la loro identità corrisponda con quanto loro abbiano dichiarato, viene utilizzato Shibboleth per il processo di autenticazione. Per quanto concerne l'autorizzazione, invece, vengono utilizzate funzioni interne di Django e viene utilizzato un sistema di permessi basati su ruoli, i quali vengono assegnati agli utenti in base al loro ruolo all'interno dell'applicazione, seguendo quindi un modello RBAC - Role Based Access Control.
 
+
+
+\section{Shibboleth}
+Viene di seguito presentato il software di autenticazione utilizzato. 
+
+
+Esso è un framework open-source per l'autenticazione federata e l'autorizzazione basata su attributi, utilizzato da molte organizzazioni e istituzioni per fornire l'accesso a risorse web protette. Esso è una implementazione di SAML - Security Assertion Markup Language e ciò permette al software di operare come SSO - Single Sign On. \cite{shibboleth}
+
+Di seguito viene riportato un Sequence Diagram semplificato che mostra il processo di autenticazione di Shibboleth. Bisogna notare che valgono le seguenti assunzioni :
+\begin{itemize}
+    \item L'utente non ha già effettuato l'accesso al suo Identity Provider.
+    \item Le credenziali inserite dall'utente sono valide.
+    \item La risorsa richiesta è presente nel sistema e la richiesta di accesso alla risorsa è correttamente formata (il che significa che l'URL fornito è valido)
+    \item L'utente ha le corrette capacità per accedere alla risorsa richiesta.
+    \item Il Service Provider è l'applicazione web.
+    \item L'Identity Provider è l'IdP dell'Università degli Studi di Trento.
+\end{itemize}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{images/shibboleth_auth.png}
+    \end{center}
+    \caption{Processo di autenticazione di Shibboleth}
+    \label{fig:shibboleth_auth}
+\end{figure}
+
+
+Descrizione del processo di autenticazione di Shibboleth:
+\begin{enumerate}
+    \item L'utente richiede l'accesso ad una risorsa protetta.
+    \item Il Service Provider che detiene la risorsa, in questo caso l'applicativo web, genera un messaggio SAML e redireziona l'utente al suo Identity Provider.
+    \item L'Identity Provider cattura il messaggio SAML e richiede all'utente di autenticarsi mediante un form apposito.
+    \item L'utente inserisce le sue credenziali.
+    \item L'Identity Provider genera una sessione e controlla la Attribute Release Policy per definire quali attributi vengono forniti all'utente, dopodichè genera un messaggio SAML contenente i dati dell'utente e lo invia al Service Provider.
+    \item Il Service Provider cattura il messaggio SAML e controlla la firma digitale per verificarne l'autenticità.
+    \item Il Service Provider fornisce la risorsa richiesta dall'utente.
+\end{enumerate}
 \section{Mail}
+Per l'invio di email agli utenti quando richiesto dal sistema, viene utilizzato un mail server che implementa il protocollo SMTP - Single Mail Transfer Protocol. Tale server è configurato come relay ad un altro mail server interno all'università ed è quest'ultimo che si occupa di inviare effettivamente le email agli utenti.
+
+La configurazione Relay permette al server al quale vengono passate le richieste di invio mail da parte di Django di inoltrarle al server interno all'università, che si occuperà di inviare le email agli utenti. Questa configurazione è stata necessaria in quanto il server interno all'università non è raggiungibile dall'esterno e tale scelta è stata effettuata per assicurare flessibilià, scalabilità e sicurezza.
+
 
 \clearpage
