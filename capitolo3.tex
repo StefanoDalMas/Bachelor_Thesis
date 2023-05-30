@@ -1,10 +1,10 @@
 \chapter{Analisi di Contesto e definizione di Challenge}
 
-In questo capitolo viene introdotta una definzione formalizzata di Challenge, successivamente alla quale viene introdotta un'analisi di contesto, necessaria per la definizione di attori e come essi interagiscono tra loro.
+In questo capitolo viene introdotta una definzione formale di Challenge, successivamente alla quale viene introdotta un'analisi di contesto, necessaria per la definizione di attori e come essi interagiscono tra loro.
 
 \section{Challenge}
 \label{sec:challenge}
-Viene definita \textbf{Challenge} una sfida proposta dall'azienda esterna all'università ed è composta da:
+Viene definita \textbf{Challenge} una sfida proposta da un'azienda esterna all'università ed è composta da:
 
 \begin{itemize}
     \item Nome della Challenge.
@@ -22,14 +22,14 @@ Viene definita \textbf{Challenge} una sfida proposta dall'azienda esterna all'un
 
 Ogni azienda può formare più di una Challenge. Vi possono essere molteplici Challenge all'interno di un laboratorio.
 
-Alla conclusione del limite temporale previsto l'azienda che ha creato la Challenge \textbf{deve} selezionare i gruppi che parteciperanno entro un quantitativo di giorni. Gli utenti facenti parte dei gruppi selezionati riceveranno una mail contenente i dati della Challenge con eventuali dettagli aggiuntivi.
+Alla conclusione del limite temporale previsto per l'iscrizione dei gruppi l'azienda che ha creato la Challenge \textbf{deve} selezionare i gruppi che parteciperanno entro un quantitativo di giorni. Gli utenti facenti parte dei gruppi selezionati riceveranno una mail contenente i dati della Challenge con eventuali dettagli aggiuntivi.
 
 Alla conclusione di una Challenge ad ogni studente è richiesto di compilare un form per fornire feedback sull'attività appena svolta per poterlo inviare all'azienda.
 L'applicativo non prevede uno strumento di comunicazione tra azienda e studente oltre al form sopracitato.
 
 Vi è una diretta correlazione \textbf{l'area tematica} della challenge proposta dall'azienda ed il \textbf{laboratorio didattico}, in quanto la suddetta può formalizzare una challenge di una specifica area tematica solamente nel laboratorio corrispondente.
 
-Alla creazione della Challenge, essa viene inserita in un Pending state finchè non viene accettata/rifiutata dal moderatore. Dopo tale azione essa entra in uno stato Accettato o Rifiutato in base alla scelta del suddetto.
+Alla creazione della Challenge, essa viene inserita in uno stato di attesa (Pending state) finchè non viene accettata/rifiutata dal moderatore. Dopo tale azione essa entra in uno stato Accettato o Rifiutato in base alla scelta del suddetto.
 
 \section{Attori}
 Di seguito vengono riportati gli attori dell'applicativo. Ad ogni attore vengono associati i requisiti funzionali correlati sulla base delle azioni che possono effettuare.
@@ -46,7 +46,7 @@ Tale utente può effettuare le seguenti azioni:
         \end{itemize}
     \item Visualizzare la lista delle Challenges facenti parte dell'area di interesse selezionata.
     \item Visualizzare informazioni inerenti alla Challenge selezionata, potendo visualizzare la \textit{Reputazione} della compagnia che ha proposto la Challenge (vedi sezione \ref{sec:valutazioni}).
-    \item Iscriversi alla Challenge formando o entrando a far parte di un gruppo.
+    \item Iscriversi alla Challenge selezionata formando o entrando a far parte di un gruppo.
     \item Al termine di una Challenge lo studente può compilare un form per fornire un feedback all'azienda sulla Challenge appena compiuta. 
     \item Al termine di una Challenge lo studente può visualizzare il feedback ricevuto da parte del Company Manager.
 \end{itemize}
@@ -70,19 +70,19 @@ Alla formazione di un gruppo esso è in stato di \textbf{Pending}. Esso può cam
     \item Il Company Manager visualizza il dettaglio del gruppo e lo rifiuta. In tal caso lo stato del gruppo diviene \textbf{Rejected}. 
 \end{itemize}
 
-Per partecipare ad una Challenge è richiesto che il gruppo sia in \textbf{Accepted} state. Il gruppo ha un tempo di vita limitato alla durata della Challenge, dunque tale entità viene creata per la Challenge.
+Per partecipare ad una Challenge è richiesto che il gruppo sia in \textbf{Accepted} state. Il gruppo ha un tempo di vita limitato alla durata della Challenge, dunque tale entità viene creata per la Challenge. Data una qualsiasi Challenge, uno studente può far parte di un solo gruppo per la specifica Challenge.
 
 
 
 \subsection{Moderatore}
 \label{sec:moderatore}
-Tale figura é incaricata di accettare le Challenges che potranno essere effettuate, oltre al modificare i membri dei gruppi. Ogni Laboratorio ha un solo responsabile. Esso viene riferito anche come \textit{responsabile di laboratorio}.
+Tale figura é incaricata di accettare le Challenges che potranno essere effettuate. Ogni Laboratorio ha un solo responsabile. Esso viene riferito anche come \textit{responsabile di laboratorio}.
 
 L'utente può effettuare le seguenti azioni:
 \begin{itemize}
     \item Visualizzare tutti i laboratori che gestisce. 
-    \item Visualizzare tutte le challenge proposte per quel laboratorio.
-    \item Accettare o rifiutare le Challenges proposte dall'azienda.
+    \item Visualizzare tutte le Challenges proposte per quel laboratorio.
+    \item Accettare o rifiutare le Challenges proposte dall'azienda. Nel caso il moderatore rifiuti una Challenge, è necessario che compili un form per fornire una motivazione dietro il rifiuto.
     \item Prenotare il laboratorio nel caso la Challenge venga accettata. Tale azione è esterna all'applicativo.
     \item Gestire gli account delle aziende(creazione, eliminazione, modifica, etc). Tale azione è esterna all'applicativo.
 \end{itemize}
@@ -95,12 +95,15 @@ Questo utente viene creato all'interno del Sistema in seguito alla formulazione 
 Tale utente può effettuare le seguenti azioni:
 \begin{itemize}
     \item Creare una Challenge.
-    \item Visualizzare tutte le Challenge che ha effettuato.
-    \item Modificare Challenge non accettate o rifiutate.
-    \item Accedere al dettaglio della Challenge e visualizzare ogni gruppo.
+    \item Visualizzare tutte le Challenge che l'azienda ha svolto e proposto.
+    \item Modificare Challenge che non siano già state accettate o rifiutare da parte del Moderatore (\ref{sec:moderatore}).
+    \item Accedere al dettaglio della Challenge e visualizzare ogni gruppo che ha effettuato richiesta di partecipare ed ha un tutor.
     \item Accettare o rifiutare l'ingresso di un gruppo ad una determinata Challenge. 
+        \begin{itemize}
+            \item per aiutarsi nel processo di selezione dei gruppi, è possibile visualizzare la \textit{Reputazione} del gruppo selezionato (vedi sezione \ref{sec:valutazioni}).
+        \end{itemize}
     \item Al termine di una Challenge il Company Manager può fornire il feedback mediante un modulo apposito per il lavoro svolto ad ogni gruppo e studente. 
-    \item Al termine di una Challenge il Company Manager può Visualizzare il feedback di tutti gli studenti che hanno partecipato alla Challenge e lo hanno fornito.
+    \item Al termine di una Challenge il Company Manager può Visualizzare il feedback di tutti gli studenti che hanno partecipato alla Challenge ed hanno compilato il modulo correlato.
 \end{itemize}
 
 \subsection{Tutor}
@@ -116,11 +119,13 @@ Esso può svolgere le seguenti attività:
 
 Nel seguente elenco è posisbile trovare una descrizione ad alto livello delle relazioni tra le differenti componente esterne al sistema. Bisogna notare che tale rappresentazione viene effettuata a livello logico e non è correlata all'architettura del framework utilizzato.
 
-Il \textbf{Company Manager} è un \textbf{attore} e può svolgere le seguenti azioni: può effettuare il login, gestire le proprie challenge, accettare o rifiutare i gruppi (già in tutored state, ossia gruppi i quali siano già formati ed accettati da un Tutor), oltre a poter compilare e visualizzare i feedback inerenti alle challenge dell'azienda.
+Tutti gli attori hanno le funzionalità di base associate ad un utente, ossia possono effettuare il login e la registrazione. 
+
+Il \textbf{Company Manager} è un \textbf{attore} e può svolgere le seguenti azioni: gestire le proprie challenge, accettare o rifiutare i gruppi (già in tutored state, ossia gruppi i quali siano già formati ed accettati da un Tutor), oltre a poter compilare e visualizzare i feedback inerenti alle challenges dell'azienda.
 
 Il \textbf{Moderatore} è un \textbf{attore} e può svolgere le seguenti azioni: può visualizzare i laboratori che modera, accedere al loro dettaglio ed accettare o rifiutare le Challenge proposte per il laboratorio.
 
-Lo \textbf{Studente} è un \textbf{attore} e può svolgere le seguenti azioni: può cambiare i propri interessi in modo da vedere solo le challenge che facciano parte della sua area di interesse, può decidere se essere aggiornato o meno sulle nuove Challenge approvate dal moderatore, formare e gestire i gruppi creati appositamente per le Challenge, fornire e visualizzare i feedback relativi alle Challenge effettuate. 
+Lo \textbf{Studente} è un \textbf{attore} e può svolgere le seguenti azioni: può cambiare i propri interessi in modo da vedere solo le challenge che facciano parte della sua area di interesse, può decidere se essere aggiornato o meno sulle nuove Challenge approvate dal moderatore, formare e gestire i gruppi creati appositamente per le Challenge, fornire e visualizzare i feedback relativi alle Challenge effettuate.
 
 Il \textbf{Tutor} è un \textbf{attore} e può svolgere le seguenti azioni: può visualizzare i gruppi che hanno richiesto la sua partecipazione, accettare o rifiutare di farne parte.
 
@@ -161,8 +166,8 @@ Data la complessità del processo, viene di seguito utilizzato un diagramma Busi
 
 Il flow dell'applicativo è il seguente:
 \begin{enumerate}
-    \item Il Company Manager crea una Challenge ed una mail viene inviata ai moderatori del laboratorio scelto come luogo per svolgere la Challenge.
-    \item Il Moderatore riceve la mail di richiesta di accettazione di una Challenge. Accede alla sua area personale, dove può visualizzare i suoi laboratori ed accede al dettaglio della Challenge. Alla conferma o rifiuto della Challenge viene inviata una email al Company Manager ed agli studenti che hanno sia scelto di essere aggiornati sulle nuove Challenge, sia che abbiano interessi che siano un super-set della Challenge accettata.
+    \item Il Company Manager crea una Challenge ed una mail viene inviata ai moderatori del laboratorio scelto come luogo per svolgere la Challenge per aggiornali della nuova richiesta.
+    \item Il Moderatore riceve la mail di richiesta di accettazione di una Challenge. Accede alla sua area personale, dove può visualizzare i suoi laboratori ed accede al dettaglio della Challenge. Alla conferma o rifiuto della Challenge viene inviata una email al Company Manager. Nel caso la Challenge sia stata accettata dal Moderatore, agli studenti che hanno sia scelto di essere aggiornati sulle nuove Challenge, sia che abbiano interessi che siano un super-set della Challenge accettata viene inviata una mail.
     \item Gli studenti possono visualizzare la challenge approvata e formare dei gruppi o entrare a far parte di gruppi già creati mediante il codice fornito al capo gruppo. Alla creazione di un gruppo il tutor selezionato riceve una email.
     \item Il tutor riceve la email e può accettare o rifiutare di entrare a far parte del gruppo. Alla sua decisione viene inviata una mail a tutti i membri del gruppo.
     \item Il Company Manager può accedere al dettaglio della Challenge ed accettare o rifiutare di far partecipare i gruppi che sono già stati accettati da un tutor. Alla sua decisione viene inviata una mail a tutti i membri del gruppo.
@@ -178,7 +183,12 @@ Il Company Manager può compilare il form dando una valutazione al gruppo ed ai 
 
 Lo studente, invece, può compilare il form dando una valutazione alla Challenge che ha effettuato. Il Company Manager vedrà all'interno della pagina di dettaglio della Challenge sia la valutazione media ricevuta, che la versione anonimizzata del feedback fornito da ogni studente. 
 
-Assieme al concetto di feedback dello studente, è utile introdurre il conceto di \textbf{Reputazione} della compagnia. Tale valore raccoglie la media di tutti i feedback effettuati da tutti gli studenti per ogni Challenge creata dall'azienda ed è utile per poter dare una valutazione oggettiva della compagnia per quanto concerne la creazione di Challenge all'interno del sistema.
+Assieme al concetto di feedback dello studente, è utile introdurre il concetto di \textbf{Reputazione}.
+
+Vi sono due tipologie di reputazione: \textit{della compagnia} e \textit{del gruppo}. Il primo indice raccoglie la media di tutti i feedback effettuati da tutti gli studenti per ogni Challenge creata dall'azienda. Il secondo indice viene calcolato come la media di tutti i feedback che ogni studente facente parte del gruppo abbia ricevuto. Nel caso uno o più studenti non abbiano mai ricevuto feedbacks, successivamente alla media del gruppo per ogni area viene segnalato il numero di studenti che non ne hanno mai ricevuto alcuno. 
+
+
+Tale indice non solo è utile per poter dare una valutazione oggettiva della compagnia per quanto concerne la creazione di Challenge all'interno del sistema, ma è anche utile per la compagnia, in quanto permette di poter avere dei parametri oggettivi per la valutazione del gruppo e la successiva eventuale selezione alla Challenge.
 
 
 
