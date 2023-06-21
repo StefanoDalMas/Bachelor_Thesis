@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.16)  30 MAY 2023 15:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.16)  21 JUN 2023 10:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -90,10 +90,29 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box55
 \@float@everytoks=\toks20
 \@floatcapt=\box56
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box57
+\extrarowheight=\dimen159
+\NC@list=\toks21
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box58
+)
+\TX@col@width=\dimen160
+\TX@old@table=\dimen161
+\TX@old@col=\dimen162
+\TX@target=\dimen163
+\TX@delta=\dimen164
+\TX@cols=\count198
+\TX@ftn=\toks22
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
  (/usr/local/texlive/2023/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2022/08/07 UCS: Input encoding UTF-8
 
@@ -539,62 +558,57 @@ Now handling font encoding U ...
    defining Unicode char U+FEFF (decimal 65279)
 ))) (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2023/02/13 3.86 The Babel package
-\babel@savecnt=\count198
-\U@D=\dimen158
+\babel@savecnt=\count199
+\U@D=\dimen165
 \l@unhyphenated=\language87
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count199
+\bbl@dirlevel=\count266
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2022/03/27 v.1.4.07 Italian support for the babel system
-\it@lettering=\count266
-\it@doublequoteactive=\count267
-\it@ISOcompliance=\count268
+\it@lettering=\count267
+\it@doublequoteactive=\count268
+\it@ISOcompliance=\count269
 )) (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count269
+\etb@tempcnta=\count270
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count270
-\l__pdf_internal_box=\box57
-)
-
-LaTeX Warning: Unused global option(s):
-    [epsfig].
-
-(./stefano_dal_mas_informatica_2022_2023.aux)
+\l__color_backend_stack_int=\count271
+\l__pdf_internal_box=\box59
+) (./stefano_dal_mas_informatica_2022_2023.aux)
 \openout1 = `stefano_dal_mas_informatica_2022_2023.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count271
-\scratchdimen=\dimen159
-\scratchbox=\box58
-\nofMPsegments=\count272
-\nofMParguments=\count273
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count274
-\MPscratchDim=\dimen160
-\MPnumerator=\count275
-\makeMPintoPDFobject=\count276
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count272
+\scratchdimen=\dimen166
+\scratchbox=\box60
+\nofMPsegments=\count273
+\nofMParguments=\count274
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count275
+\MPscratchDim=\dimen167
+\MPnumerator=\count276
+\makeMPintoPDFobject=\count277
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -635,15 +649,15 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 38.
-LaTeX Info: Redefining \it@ccap on input line 38.
+LaTeX Info: Redefining \it@ocap on input line 41.
+LaTeX Info: Redefining \it@ccap on input line 41.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 38.
+italian.ldf    on input line 41.
 
 (./pagina_iniziale.tex
 Package epstopdf Info: Source file: <marchio_unitrento_colore_it_202002.eps>
@@ -693,68 +707,65 @@ Capitolo 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-<images/architettura_django.png, id=35, 884.30376pt x 439.6425pt>
+<images/architettura_django.png, id=35, 1111.15125pt x 559.08875pt>
 File: images/architettura_django.png Graphic file (type png)
 <use images/architettura_django.png>
 Package pdftex.def Info: images/architettura_django.png  used on input line 34.
-(pdftex.def)             Requested size: 442.1508pt x 219.82071pt.
+(pdftex.def)             Requested size: 466.68034pt x 234.81566pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4] [5 <./images/architettura_django.png>] [6]
-<images/shibboleth_auth.png, id=48, 470.75874pt x 567.11874pt>
+<images/shibboleth_auth.png, id=48, 583.17876pt x 679.53876pt>
 File: images/shibboleth_auth.png Graphic file (type png)
 <use images/shibboleth_auth.png>
 Package pdftex.def Info: images/shibboleth_auth.png  used on input line 112.
-(pdftex.def)             Requested size: 314.40001pt x 378.75609pt.
+(pdftex.def)             Requested size: 314.40001pt x 366.35445pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7] [8 <./images/shibboleth_auth.png>]) (./capitolo3.tex
 Capitolo 3.
 [9] [10] [11]
-<images/diagrama_di_contesto.png, id=66, 1033.8625pt x 670.505pt>
+<images/diagrama_di_contesto.png, id=66, 1114.1625pt x 743.77875pt>
 File: images/diagrama_di_contesto.png Graphic file (type png)
 <use images/diagrama_di_contesto.png>
-Package pdftex.def Info: images/diagrama_di_contesto.png  used on input line 150.
-(pdftex.def)             Requested size: 475.58252pt x 308.43605pt.
+Package pdftex.def Info: images/diagrama_di_contesto.png  used on input line 201.
+(pdftex.def)             Requested size: 479.08054pt x 319.81862pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-<images/BPMN_Challenge.png, id=70, 1137.24875pt x 692.5875pt>
+<images/BPMN_Challenge.png, id=70, 1238.6275pt x 762.85pt>
 File: images/BPMN_Challenge.png Graphic file (type png)
 <use images/BPMN_Challenge.png>
-Package pdftex.def Info: images/BPMN_Challenge.png  used on input line 161.
-(pdftex.def)             Requested size: 459.51054pt x 279.84117pt.
-
-Underfull \vbox (badness 4913) has occurred while \output is active []
-
+Package pdftex.def Info: images/BPMN_Challenge.png  used on input line 212.
+(pdftex.def)             Requested size: 459.51054pt x 283.00668pt.
  [13 <./images/diagrama_di_contesto.png> <./images/BPMN_Challenge.png>]) (./capitolo4.tex
 Capitolo 4.
 ) (./capitolo5.tex
 Capitolo 5.
 [14]
-<images/modelli_db.png, id=79, 1014.79124pt x 634.37pt>
+<images/modelli_db.png, id=79, 1124.2pt x 686.565pt>
 File: images/modelli_db.png Graphic file (type png)
 <use images/modelli_db.png>
 Package pdftex.def Info: images/modelli_db.png  used on input line 33.
-(pdftex.def)             Requested size: 459.51054pt x 287.24492pt.
+(pdftex.def)             Requested size: 459.51054pt x 280.62395pt.
  [15] [16 <./images/modelli_db.png>]) (./conclusioni.tex
 Capitolo 6.
 ) (./stefano_dal_mas_informatica_2022_2023.bbl [17]) [18
 
 ] (./stefano_dal_mas_informatica_2022_2023.aux) ) 
 Here is how much of TeX's memory you used:
- 4043 strings out of 476025
- 67229 string characters out of 5790017
- 1860388 words of memory out of 5000000
- 24414 multiletter control sequences out of 15000+600000
+ 4171 strings out of 476025
+ 69357 string characters out of 5790017
+ 1864388 words of memory out of 5000000
+ 24536 multiletter control sequences out of 15000+600000
  519700 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,76p,1160b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,76p,970b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on stefano_dal_mas_informatica_2022_2023.pdf (20 pages, 1035279 bytes).
+Output written on stefano_dal_mas_informatica_2022_2023.pdf (20 pages, 958906 bytes).
 PDF statistics:
  134 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

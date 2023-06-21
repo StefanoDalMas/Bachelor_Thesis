@@ -39,17 +39,30 @@ Uno studente viene definito come una persona iscritta all'Università di Trento 
 
 Tale utente può effettuare le seguenti azioni:
 
-\begin{itemize}
-    \item Selezionare le aree tematiche al quale è interessato per poter ricevere notifiche alla validazione di nuove Challenge da parte del moderatore.
-        \begin{itemize}
-            \item Lo studente può decidere di non ricevere email inerenti a nuove Challenge facente parte della sua area tematica.
-        \end{itemize}
-    \item Visualizzare la lista delle Challenges facenti parte dell'area di interesse selezionata.
-    \item Visualizzare informazioni inerenti alla Challenge selezionata, potendo visualizzare la \textit{Reputazione} della compagnia che ha proposto la Challenge (vedi sezione \ref{sec:valutazioni}).
-    \item Iscriversi alla Challenge selezionata formando o entrando a far parte di un gruppo.
-    \item Al termine di una Challenge lo studente può compilare un form per fornire un feedback all'azienda sulla Challenge appena compiuta. 
-    \item Al termine di una Challenge lo studente può visualizzare il feedback ricevuto da parte del Company Manager.
-\end{itemize}
+\begin{table}[ht]
+    \centering
+    \begin{tabularx}{\textwidth}{|c|X|}
+        \hline
+        \textbf{Requisito Funzionale} & \textbf{Descrizione}\\
+        \hline
+        RF1 & Selezionare le aree tematiche al quale è interessato per poter ricevere notifiche alla validazione di nuove Challenge da parte del moderatore.\\
+        \hline
+        RF2 & Selezionare di non ricevere email inerenti a nuove Challenge facente parte della sua area tematica.\\
+       \hline
+        RF3 & Visualizzare la lista delle Challenge facenti parte dell'area di interesse selezionata.\\ 
+        \hline
+        RF4 & Visualizzare informazioni inerenti alla Challenge selezionata, potendo visualizzare la \textit{Reputazione} della compagnia che ha proposto la Challenge (vedi sezione \ref{sec:valutazioni}).\\ 
+        \hline
+        RF5 & Iscriversi alla Challenge selezionata formando o entrando a far parte di un gruppo.\\ 
+        \hline
+        RF6 & Al termine di una Challenge lo studente può compilare un form per fornire un feedback all'azienda sulla Challenge appena compiuta.\\ 
+        \hline
+        RF7 & Al termine di una Challenge lo studente può visualizzare il feedback ricevuto da parte del Company Manager.\\ 
+        \hline
+    \end{tabularx}
+    \caption{Tabella dei Requisiti funzionali correlati allo studente}
+\end{table}
+
 
 Uno studente può avere molteplici aree di interesse e può partecipare a più di una Challenge appartenente al suo settore di interesse.
 
@@ -79,41 +92,79 @@ Per partecipare ad una Challenge è richiesto che il gruppo sia in \textbf{Accep
 Tale figura é incaricata di accettare le Challenges che potranno essere effettuate. Ogni Laboratorio ha un solo responsabile. Esso viene riferito anche come \textit{responsabile di laboratorio}.
 
 L'utente può effettuare le seguenti azioni:
-\begin{itemize}
-    \item Visualizzare tutti i laboratori che gestisce. 
-    \item Visualizzare tutte le Challenges proposte per quel laboratorio.
-    \item Accettare o rifiutare le Challenges proposte dall'azienda. Nel caso il moderatore rifiuti una Challenge, è necessario che compili un form per fornire una motivazione dietro il rifiuto.
-    \item Prenotare il laboratorio nel caso la Challenge venga accettata. Tale azione è esterna all'applicativo.
-    \item Gestire gli account delle aziende(creazione, eliminazione, modifica, etc). Tale azione è esterna all'applicativo.
-\end{itemize}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabularx}{\textwidth}{|c|X|}
+        \hline
+        \textbf{Requisito Funzionale} & \textbf{Descrizione}\\
+        \hline
+        RF1 & Visualizzare tutti i laboratori che gestisce.\\ 
+        \hline
+        RF2 & Visualizzare tutte le Challenges proposte per quel laboratorio.\\ 
+        \hline
+        RF3 & Accettare o rifiutare le Challenges proposte dall'azienda. Nel caso il moderatore rifiuti una Challenge, è necessario che compili un form per fornire una motivazione dietro il rifiuto.\\ 
+        \hline
+        RF4 & Prenotare il laboratorio nel caso la Challenge venga accettata. Tale azione è esterna all'applicativo.\\ 
+        \hline
+        RF5 & Gestire gli account delle aziende(creazione, eliminazione, modifica, etc). Tale azione è esterna all'applicativo.\\ 
+        \hline
+    \end{tabularx}
+    \caption{Tabella dei Requisiti funzionali correlati al Moderatore}
+\end{table}
 
 
 \subsection{Company Manager}
 
-Questo utente viene creato all'interno del Sistema in seguito alla formulazione ed approvazione di una richiesta esterna all'applicativo.
+Questo utente viene creato all'interno del Sistema solamente in seguito alla formulazione ed approvazione di una richiesta formale. Tale richiesta è esterna all'applicativo.
 
 Tale utente può effettuare le seguenti azioni:
-\begin{itemize}
-    \item Creare una Challenge.
-    \item Visualizzare tutte le Challenge che l'azienda ha svolto e proposto.
-    \item Modificare Challenge che non siano già state accettate o rifiutare da parte del Moderatore (\ref{sec:moderatore}).
-    \item Accedere al dettaglio della Challenge e visualizzare ogni gruppo che ha effettuato richiesta di partecipare ed ha un tutor.
-    \item Accettare o rifiutare l'ingresso di un gruppo ad una determinata Challenge. 
-        \begin{itemize}
-            \item per aiutarsi nel processo di selezione dei gruppi, è possibile visualizzare la \textit{Reputazione} del gruppo selezionato (vedi sezione \ref{sec:valutazioni}).
-        \end{itemize}
-    \item Al termine di una Challenge il Company Manager può fornire il feedback mediante un modulo apposito per il lavoro svolto ad ogni gruppo e studente. 
-    \item Al termine di una Challenge il Company Manager può Visualizzare il feedback di tutti gli studenti che hanno partecipato alla Challenge ed hanno compilato il modulo correlato.
-\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|c|X|}
+        \hline
+        \textbf{Requisito Funzionale} & \textbf{Descrizione}\\
+        \hline
+        RF1 & Creare una Challenge.\\ 
+        \hline
+        RF2 & Visualizzare tutte le Challenge che l'azienda ha svolto e proposto.\\ 
+        \hline
+        RF3 & Modificare Challenge che non siano già state accettate o rifiutare da parte del Moderatore (\ref{sec:moderatore}).\\ 
+        \hline
+        RF4 & Accedere al dettaglio della Challenge e visualizzare ogni gruppo che ha effettuato richiesta di partecipare ed ha un tutor.\\ 
+        \hline
+        RF5 & Accettare o rifiutare l'ingresso di un gruppo ad una determinata Challenge. Per aiutarsi nel processo di selezione dei gruppi, è possibile visualizzare la \textit{Reputazione} del gruppo selezionato (vedi sezione \ref{sec:valutazioni}).\\
+        \hline
+        RF6 & Al termine di una Challenge il Company Manager può fornire il feedback mediante un modulo apposito per il lavoro svolto ad ogni gruppo e studente.\\ 
+        \hline
+        RF7 & Al termine di una Challenge il Company Manager può Visualizzare il feedback di tutti gli studenti che hanno partecipato alla Challenge ed hanno compilato il modulo correlato.\\
+        \hline
+
+    \end{tabularx}
+    \caption{Tabella dei Requisiti funzionali correlati al Company Manager}
+\end{table}
+
 
 \subsection{Tutor}
 Tale figura è un membro del DISI ed è incaricata della supervisione di un gruppo durante una Challenge. Alla creazione di un gruppo per partecipare ad una Challenge \textbf{deve} essere selezionato. 
 
 Esso può svolgere le seguenti attività:
-\begin{itemize}
-    \item Visualizzare tutti i gruppi che hanno richiesto la sua partecipazione. 
-    \item Accettare di entrare a far parte di un gruppo o rifiutarlo. Si ricordi che all'accettazione da parte del tutor il gruppo entra in \textbf{Tutored }state. 
-\end{itemize}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabularx}{\textwidth}{|c|X|}
+        \hline
+        \textbf{Requisito Funzionale} & \textbf{Descrizione}\\
+        \hline
+        RF1 & Visualizzare tutti i gruppi che hanno richiesto la sua partecipazione.\\ 
+        \hline
+        RF2 & Visualizzare la pagina di dettaglio del gruppo.\\ 
+        \hline
+        RF3 & Accettare di entrare a far parte di un gruppo o rifiutarlo. Si ricordi che all'accettazione da parte del tutor il gruppo entra in \textbf{Tutored }state.\\ 
+        \hline
+    \end{tabularx}
+    \caption{Tabella dei Requisiti funzionali correlati al Tutor}
+\end{table}
 
 \section{Diagramma di Contesto}
 
@@ -147,7 +198,7 @@ Di seguito viene riportato il diagramma di contesto dell'applicativo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.46]{images/diagrama_di_contesto.png}
+    \includegraphics[scale=0.43]{images/diagrama_di_contesto.png}
     \label{fig:diagrama_di_contesto}
     \caption{Diagramma di contesto}
 \end{figure}
