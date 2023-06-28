@@ -3,7 +3,7 @@
 In questo capitolo vengono presentate le conclusioni ed i possibili sviluppi futuri dell'applicativo.
 
 \section{Conclusioni}
-Sono state presentate le varie fasi dello sviluppo dell'applicativo DISI Challenge, un progetto che rende possibile ridurre la distanza tra la realtà dell'industria con quella universitaria, permettendo alle aziende di formalizzare Challenges ed agli studenti di formare dei gruppi per accedervi, tutto in un'unica WebApp.
+Sono state presentate le varie fasi dello sviluppo dell'applicativo DISI Challenge, un progetto che rende possibile ridurre la distanza tra la realtà dell'industria e quella universitaria, permettendo alle aziende di formalizzare Challenges ed agli studenti di formare dei gruppi per accedervi, tutto in un'unica WebApp.
 
 Prima dello sviluppo dell'applicativo, è stata svolta un'accurata analisi delle tecnologie utilizzate in DISI Industry, per permettere di avere un'applicazione che lavorasse in sintonia con essa, in modo da poter avere un'esperienza utente unica, senza dover imparare ad utilizzare due applicativi diversi.
 
@@ -16,6 +16,7 @@ Per quanto concerne gli obbiettivi definiti, essi sono stati raggiunti in quanto
 Oltre a questi attori, i principali all'interno dell'applicativo, sono stati definiti degli attori di supporto, tra i quali Moderatori e Tutor, figure che permettono di avere un controllo maggiore all'interno dell'applicativo.
 
 
+
 \section{Validazione}
 Ad ogni funzionalità aggiunta si sono svolti degli Unit Tests, ossia dei test volti al verificare che tale funzionalità sia implementata correttamente. Inoltre è stato necessario verificare che tutte le nuove funzionalità implementate non andassero a modificare il comportamento delle funzionalità già presenti, per questo motivo sono stati svolti anche degli Integration Tests.
 
@@ -24,6 +25,10 @@ Per quanto concerne la validazione dell'applicativo e per poter ottenere dei fee
 
 \section{Sviluppi Futuri}
 L'applicazione ha visto un ingrandimento durante lo sviluppo, ad esempio con l'aggiunta del concetto di \textbf{Reputazione} \ref{sec:valutazioni}, non presente inizialmente. Per permettere di sviluppare tutti i requisiti cercando di mantenere il miglior standard qualitativo, sono state omesse alcune funzionalità ritenute secondarie.
+
+
+Data la natura dell'applicativo tra le maggiori sfide affrontate vi sono il riuscire a scrivere codice che fosse compatibile con l'applicativo, sia seguendo lo stile grafico che lo stile dal punto di vista strutturale e di funzionamento, oltre al riuscire a mantenere un buon livello di qualità del codice, cercando di seguire le best practices e sfruttare al meglio le funzionalità proposte da Django.
+
 
 Valutando la soluzione nel complesso, è possibile ottimizzare alcune query effettuate con il database per permettere di avere un'applicazione più performante. Un altra componente che può essere migliorata è il front-end, in quanto non essendo questo progetto solamente adibito a ciò ma essendo un progetto di ingegneria del software, è stato dato più peso alla parte di back-end, lasciando la parte di front-end più basilare e volta alla dimostrazione delle funzionalità richieste più che al lato estetico, comunque gradevole data l'estensione dallo stile dell'applicativo orginiale.
 
