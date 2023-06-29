@@ -6,12 +6,12 @@ La prima parte del tirocinio è stata investita per comprendere come implementar
 In questo capitolo vengono presentate le tecnologie utilizzate e le motivazioni dietro tali scelte. In particolare, vengono presentate le tecnologie utilizzate per la realizzazione del back-end, del front-end e del database.
 
 \section{Django}
-Il framework utilizzato è Django, esso è stato scelto per la sua semplicità di utilizzo e per la sua flessibilità. Django è un framework open-source di alto-livello per lo sviluppo di applicazioni web scritto in Python e permette lo sviluppo di webapp funzionali e sicure senza il bisogno di utilizzare plugin esterni per avere funzionalità che possono essere considerate necessarie per una webapp moderna, in quanto si occupa dal'accesso ai dati del database al routing all'interno della webapp. Esso è basato sul pattern architetturale Model-View-Template (MVT) e permette di sviluppare applicazioni web in modo rapido e pulito, fornendo un'interfaccia di amministrazione per la gestione dei dati, così da non dover implementare un'area per l'amministratore mediante un altro linguaggio o estensioni esterne, ma mantenendo unificata la codebase.
+Il framework utilizzato è Django, esso è stato scelto per la sua semplicità di utilizzo e per la sua flessibilità. Django è un framework open-source di alto livello per lo sviluppo di applicazioni web scritto in Python e permette la creazione di webapp funzionali e sicure senza il bisogno di utilizzare plug-in esterni per avere funzionalità che possono essere considerate necessarie per una webapp moderna, in quanto si occupa dal'accesso ai dati del database al routing all'interno della webapp. Esso è basato sul pattern architetturale Model-View-Template (MVT) e permette di sviluppare applicazioni web in modo rapido e pulito, fornendo un'interfaccia di amministrazione per la gestione dei dati, così da non dover implementare un'area per l'amministratore mediante un altro linguaggio o estensioni esterne, ma mantenendo unificata la codebase.
 
 Un altro vantaggio risiede nella scalabilità del framework, il quale permette la creazione di moduli che possono essere inseriti o rimossi con l'aggiunta di poche righe di codice all'interno di un file apposito.
 
 
-Data la natura del progetto, è stato necessario avere un framework che permettesse la creazione, validazione e modifica dei form, difatti Django offre un componente apposito per la gestione dinamica dei form dalle View, senza dover passare per il codice html evitando dunque non solo inconsistenza in tutta la codebase, ma anche assicurando un livello maggiore di mantenibilità di codice, in quanto tutti i form sono in un'area specifica. Per la visualizzazione dei form dinamicamente e con dello stile unificato viene utilizzato il modulo Crispy Forms per permettere di controllare come il form venga renderizzato dall'utente finale. \cite{crispy_forms}
+Data la natura del progetto, è stato necessario avere un framework che permettesse la creazione, validazione e modifica dei form, difatti Django offre un componente apposito per la gestione dinamica dei form dalle View, senza dover passare per il codice html evitando dunque non solo inconsistenza in tutto il codice del sistema, ma anche assicurando un livello maggiore di mantenibilità di codice, in quanto tutti i form sono in un'area specifica. Per la visualizzazione dei form dinamicamente e con dello stile unificato viene utilizzato il modulo Crispy Forms per permettere di controllare come il form venga renderizzato dall'utente finale. \cite{crispy_forms}
 
 
 \subsection{Architettura MVT}
@@ -85,7 +85,7 @@ Tale framework è estremamente personalizzabile, è compatibile con tutti i brow
 Precisamente viene utilizzato Bootstrap v5.0 \cite{bootstrap}
 
 \subsection{SCSS}
-Per permettere la customizzazione di alcuni elementi di stile, viene utilizzato Sassy Cascading Style Sheets (SCSS), una delle estrensioni del classico CSS più stabili, mature e potenti che permette di utilizzare variabili, annidamento, mixin, import, ereditarietà e altro, rendendo più semplice la scrittura di codice CSS. \cite{scss}
+Per permettere la customizzazione di alcuni elementi di stile, viene utilizzato Sassy Cascading Style Sheets (SCSS), una delle estensioni del classico CSS più stabili, mature e potenti che permette di utilizzare variabili, annidamento, mixin, import, ereditarietà e altro, rendendo più semplice la scrittura di codice CSS. \cite{scss}
 
 \section{Autenticazione ed Autorizzazione}
 Seguendo il principio \textit{Separation of concerns}, l'autenticazione e l'autorizzazione vengono gestite da due componenti differenti, in modo da permettere una maggiore manutenibilità e scalabilità del sistema.
