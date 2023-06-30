@@ -44,7 +44,7 @@ Il processo di una richiesta e risposta HTTP utilizzando il framework Django è 
     \item Django valuta l'URL e controlla che esista una View corrispondente a tale URL. 
     \item Entrando nel Model View Template la View cattura la richiesta, elabora i dati ed invia una risposta. Possono accadere le seguenti azioni :
     \begin{enumerate}
-        \item La View richiede l'accesso a dei dati al componente Model : la query espressa sottoforma di linguaggio python viene valutata e trascritta nel linguaggio del database (nel contesto di questo specifico applicativo in SQL) e fornisce il QuerySet(l'insieme dei dati richiesti) alla View.
+        \item La View richiede l'accesso a dei dati al componente Model : la query espressa sotto forma di linguaggio python viene valutata e trascritta nel linguaggio del database (nel contesto di questo specifico applicativo in SQL) e fornisce il QuerySet(l'insieme dei dati richiesti) alla View.
         \item Con i dati ottenuti la view effettua delle modifiche a questi dati ed invia una copia al componente Model. 
         \item Se richiesto, utilizzando i dati ottenuti, la view formula una richiesta di visualizzazione di una pagina HTML al componente Template e passa come argomenti gli eventuali dati aggiuntivi ottenuti. Una volta ricevuta la richiesta tale modulo genera i dati HTML necessari e li restituisce alla View
     \end{enumerate}
